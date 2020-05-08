@@ -2,14 +2,14 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import ShoppingCart from "./ShoppingCart";
 
-const plants = [{id:123, name:'hello', price: 21}, {id:234, name:'goodbye', price: 32}] // with each object being a mock plant
+const plants = [{id:123, name:'rose', price: 21}, {id:234, name:'tulip', price: 32}] // with each object being a mock plant
 test("displays plants in cart", () => {
   const { getByText } = render(<ShoppingCart cart={plants} />)
 
-    const displayPlantName1 = getByText(/hello/i)
+    const displayPlantName1 = getByText(/rose/i)
     const displayPlantPrice1 = getByText(/21/i)
 
-    const displayPlantName2 = getByText(/goodbye/i)
+    const displayPlantName2 = getByText(/tulip/i)
     const displayPlantPrice2 = getByText(/32/i)
 
 
