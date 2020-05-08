@@ -11,7 +11,7 @@ export default function ShoppingCart(props) {
           <img className="plant-image" src={plant.img} alt={plant.name} />
           <div className="plant-details">
             <h2 className="plant-name">{plant.name}</h2>
-            <p>${plant.price}</p>
+            <p data-testid='test-plant-price'>${plant.price}</p>
             <button
               className="plant-button"
               onClick={() => props.removeFromCart(plant)}

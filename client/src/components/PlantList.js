@@ -9,11 +9,24 @@ export default class PlantList extends Component {
 
     this.state = {
 
-      plants: []
+      plants: [],
+      search:''
 
     }
 
     
+
+  }
+
+  handleChange = (e) => {
+
+
+    this.setState({
+
+      search: e.target.value
+
+    })
+
 
   }
   // when the component mounts:
@@ -43,7 +56,9 @@ export default class PlantList extends Component {
   render() {
     return (
       <main className="plant-list">
+        <input onChange={this.handleChange} placeholder="...search" type='text' name='search' value={this.state.search} />
         {this.state?.plants?.map((plant) => (
+          
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
             <div className="plant-details">
@@ -63,7 +78,10 @@ export default class PlantList extends Component {
               </button>
             </div>
           </div>
-        ))}
+          ))
+        
+        
+  }
       </main>
     );
   }
